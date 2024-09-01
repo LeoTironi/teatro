@@ -6,10 +6,6 @@ class AnotacaoModel:
         self.cursor = self.con.cursor()
         self.cursor.execute("DROP TABLE IF EXISTS anotacoes")
         self.cursor.execute("CREATE TABLE IF NOT EXISTS anotacoes(id_anotacao INTEGER PRIMARY KEY AUTOINCREMENT, conteudo TEXT NOT NULL, titulo TEXT NOT NULL, id_peca INTEGER NOT NULL, FOREIGN KEY(id_peca) REFERENCES peca(id_peca))")
-        self.adicionar_nova_anotacao("3", "teste1", "teste")
-        self.adicionar_nova_anotacao("3", "teste2", "teste")
-        self.adicionar_nova_anotacao("3", "teste3", "teste")
-        self.adicionar_nova_anotacao("3", "teste4", "teste")
         self.con.commit()
 
     def adicionar_nova_anotacao(self, id_peca, titulo, conteudo):

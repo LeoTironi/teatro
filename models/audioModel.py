@@ -10,7 +10,12 @@ class AudioModel:
     def criar_novo_audio(self, texto:str, id_peca:str, audio):
         self.cursor.execute("SELECT max(id_audio) from audios")
         atual = self.cursor.fetchone()
-        caminho=f"final/audios/{atual[0]}.wav"
+        if atual[0]:
+            print("ATUal")
+            print(atual)
+            caminho=f"audios/{atual[0]+1}.wav"
+        else:
+            caminho=f"audios/1.wav"
         wav.write(caminho, 44100, audio)
         self.cursor.execute("INSERT INTO audios(texto, caminho, id_peca) values(?,?,?)",(texto, caminho, id_peca,))
         self.con.commit()

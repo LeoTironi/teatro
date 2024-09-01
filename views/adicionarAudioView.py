@@ -35,19 +35,6 @@ class AudioView(UserControl):
                                     OutlinedButton(
                                         width=None,
                                         height=40,
-                                        on_click=lambda e: self.adicionarNovaAnotacao(peca),
-                                        text="Salvar",
-                                        style=ft.ButtonStyle(
-                                            side={ft.ControlState.DEFAULT: ft.BorderSide(2, ft.colors.BLACK)},
-                                            shape={ft.ControlState.DEFAULT: ft.RoundedRectangleBorder(radius=5)},
-                                            bgcolor=ft.colors.WHITE,
-                                            color=ft.colors.BLACK,
-                                        ),
-                                        expand=True
-                                    ),
-                                    OutlinedButton(
-                                        width=None,
-                                        height=40,
                                         on_click=lambda e: self.comecar_gravacao(peca),
                                         text="Gravar",
                                         style=ft.ButtonStyle(
